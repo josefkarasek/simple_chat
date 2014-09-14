@@ -71,10 +71,9 @@ public class ChatController {
 	public@ResponseBody Map<Long, Post> downloadAllPosts(@PathVariable("id") long numberOfIds) {
 		Map<Long, Post> postsToBeSent = new HashMap<Long, Post>();
 		
-		for(long i = 1; i < posts.size() && i < numberOfIds; ++i) {
+		for(long i = 1; i < posts.size() && i <= numberOfIds; ++i) {
 			postsToBeSent.put(i, posts.get(i));
 		}
-		
 		return postsToBeSent;
 	}
 }
