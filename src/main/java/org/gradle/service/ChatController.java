@@ -29,6 +29,7 @@ public class ChatController {
 	
 	@RequestMapping(value="/users", method=RequestMethod.POST)
 	public @ResponseBody User addUser(@RequestBody User u) {
+		System.out.println("###### doPost @Body User at ___ addUser ___ ######");
 		if(u.getId() != 0)
 			return u;
 		
@@ -68,7 +69,7 @@ public class ChatController {
 	}
 	
 	@RequestMapping(value="/posts/{id}", method=RequestMethod.GET)
-	public@ResponseBody Map<Long, Post> downloadAllPosts(@PathVariable("id") long numberOfIds) {
+	public@ResponseBody Map<Long, Post> downloadRecentPosts(@PathVariable("id") long numberOfIds) {
 		Map<Long, Post> postsToBeSent = new HashMap<Long, Post>();
 		
 		for(long i = 1; i < posts.size() && i <= numberOfIds; ++i) {
