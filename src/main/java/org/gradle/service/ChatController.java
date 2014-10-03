@@ -29,7 +29,6 @@ public class ChatController {
 	
 	@RequestMapping(value="/users", method=RequestMethod.POST)
 	public @ResponseBody User addUser(@RequestBody User u) {
-		System.out.println("###### doPost @Body User at ___ addUser ___ ######");
 		if(u.getId() != 0)
 			return u;
 		

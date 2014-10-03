@@ -23,8 +23,8 @@ public interface ChatSvcApi {
 	@GET(POSTS_PATH)
 	public HashMap<Long, Post> getRecentPosts(@Path(ID_PARAMETER) long id);
 	
-	@POST(USER_PARAMETER)
-	public User addUser(@Body User u);
+	@POST("/users")
+	public User addNewUser(@Body User u);
 	
 	@POST(POSTS_PARAMETER)
 	public Post registerPost(@Body User u);

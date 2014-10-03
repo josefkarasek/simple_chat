@@ -31,7 +31,9 @@ public class GeneralTest {
 	@Test
 	public void testAddUser() throws Exception {
 		System.out.println(chatSvc.getAllPosts());
-		User userReceived = chatSvc.addUser(new User("user0", 0));
+		String newUser = "user0";
+		long newId = 0;
+		User userReceived = chatSvc.addNewUser(new User(newUser, newId));
 		assertTrue(userReceived.getId() > 0);
 		assertEquals(user1.getName(), userReceived.getName());
 	}

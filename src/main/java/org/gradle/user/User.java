@@ -1,11 +1,12 @@
 package org.gradle.user;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class User {
 	private final String name;
 	private final long id;
-	private List<Long> posts;
+	private List<Long> posts = new ArrayList<Long>();
 	
 	public User(String name, long id) {
 		this.name = name;
